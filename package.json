@@ -1,0 +1,24 @@
+{
+  "name": "babel-setup-and-configurations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "keywords": [
+    "babel-setup",
+    "babel",
+    "babel configurations"
+  ],
+  "author": "Attamjot Singh Khurana",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7"
+  }
+}
