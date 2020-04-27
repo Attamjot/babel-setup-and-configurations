@@ -4,19 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist"
+    "clean": "rm -rf dist/",
+    "dev": "webpack --watch --mode=development",
+    "prod": "webpack --mode=production",
+    "start": "npm run clean && npm run dev"
   },
   "keywords": [
-    "babel-setup",
-    "babel",
-    "babel configurations"
+    "webpack-setup",
+    "webpack",
+    "webpack and babel configurations"
   ],
   "author": "Attamjot Singh Khurana",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5"
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "path": "^0.12.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7"

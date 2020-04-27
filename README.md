@@ -1,16 +1,42 @@
-# Babel Setup And Configurations
+# Babel Integration with Webpack
 
-* This repository will help you setup:
-    * Babel standalone
-    * Babel Integration with Webpack
-    * Babel Integration with Webpack and linting with Eslint ( eslint-config-airbnb ) and formatting tool prettier.
+### Dependencies:
+* @babel/core
+* @babel/preset-env
+* @babel/polyfill
+* babel-loader
+* webpack
+* webpack-cli
+* path
 
-Note: 
-### How to remove node_modules or any if it by mistake added to git repo :
+### Webpack Configuration
+
 ```javascript
-    #add 'node_modules' to .gitignore file
+ // webpack.config.js
+    const path = require('path');
 
-    git rm -r --cached node_modules
-    git commit -m 'Remove the now ignored directory node_modules'
-    git push origin master
+    module.exports = {
+        context: __dirname,
+        entry: './src/index.js',
+        output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js'
+        },
+        module: {
+            rules: [
+                {
+                    test: '/\.js$/',
+                    exclude: '/node_modules/',
+                    use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                    },
+                    // Instead of defining the object to use key, you can also do ==> use: "babel-loader"
+                    
+                }
+            ]
+        }
+    };
 ```
