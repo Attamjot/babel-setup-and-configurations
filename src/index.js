@@ -1,8 +1,12 @@
-// ES2015 / ES6 javascript version
+import './main.css';
 
-const printName = () => {
-  console.log("Index js file");
-  return "Hello";
+const renderButton = () => {
+  const button = document.createElement("button");
+  button.textContent = "Click me";
+  button.addEventListener("click", () => {
+    alert("button clicked");
+  });
+  document.body.appendChild(button);
 };
 
-printName();
+renderButton();

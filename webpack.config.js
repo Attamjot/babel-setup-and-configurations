@@ -11,7 +11,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: '/\.js$/',
+                test: /\.css$/,
+                use: ["style-loader","css-loader"]
+            },
+            {
+                test: /\.js$/,
                 exclude: '/node_modules/',
                 use: {
                   loader: 'babel-loader',
@@ -19,8 +23,6 @@ module.exports = {
                       presets: ['@babel/preset-env']
                   }
                 },
-                // Instead of defining the object to use key, you can also do ==> use: "babel-loader"
-                
             }
         ]
     },
