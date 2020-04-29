@@ -3,12 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: __dirname,
-    devtool: "none",
     entry: './src/index.js',
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'main.[hash].js' // added cache busting by adding the hash
-    },
     module: {
         rules: [
             {
