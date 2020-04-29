@@ -25,6 +25,8 @@
 20. mini-css-extract-plugin ( Extracts CSS into separate files )
 21. OptimizeCssAssetsWebpackPlugin
 22. TerserPlugin
+23. @babel/node  ( babel-node is a CLI that works exactly the same as the Node.js CLI, with the added benefit of compiling with Babel presets and plugins before running it. )
+24. @babel/cli ( Babel comes with a built-in CLI which can be used to compile files from the command line. ). But for this it demands .babelrc configuration file , by which it will tell how to transpile the modern Browser code to ES5. So i have added .babelrc file as well so that the time if i run my code from CLI , it can see the configurations of babel transpilation code from there.
 
 ### Plugins:
 * html-webpack-plugin ( html-webpack-plugin plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags.)
