@@ -32,7 +32,7 @@
         entry: './src/index.js',
         output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.[contentHash].js' // added cache busting by adding the hash
+        filename: 'main.[hash].js' // added cache busting by adding the hash
         },
         module: {
             rules: [
