@@ -23,6 +23,20 @@ module.exports = {
                       presets: ['@babel/preset-env']
                   }
                 },
+            },
+            {
+                test: /\.html$/,
+                use: 'html-loader'
+            },
+            {
+                test: /\.(svg|png|jpg|jpeg|gif)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                       name: '[name].[hash].[ext]',
+                       outputPath: "images"
+                    }
+                }
             }
         ]
     },

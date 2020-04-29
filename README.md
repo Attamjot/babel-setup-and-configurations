@@ -16,6 +16,9 @@
 * sass-loader ( Loads a Sass/SCSS file and compiles it to CSS. )
   * node-sass ( sass-loader depends on this dependency )
 * webpack-merge ( Will combine/concatenates the common functionality of webpack configurations setup in                                  "webpack.common.js" with webpack.dev.js and webpack.prod.js )
+* html-loader  ( Whereever it finds the img with src, it converts it to require() )
+* file-loader  ( File loader will check these requires tags and resolves this paths and paste the images that we                     want to render to the dist folder. )
+* clean-webpack-plugin (A webpack plugin to remove/clean your build folder(s).)
 
 ### Plugins:
 * html-webpack-plugin ( html-webpack-plugin plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags.)
