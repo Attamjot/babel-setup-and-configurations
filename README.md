@@ -28,18 +28,20 @@
 
     module.exports = {
         context: __dirname,
+        devtool: "none",
         entry: './src/index.js',
         output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: 'main.[contentHash].js' // added cache busting by adding the hash
         },
         module: {
             rules: [
                 {
-                    test: /\.css$/,
+                    test: /\.s[ac]ss$/,
                     use: [
-                        "style-loader",  //3. Injects styles into DOM 
-                        "css-loader"     //2. Turns css to Javascript
+                        "style-loader",  //3. Creates 'style' nodes from JS strings and Injects styles into DOM 
+                        "css-loader",     //2. Translate css into Javascript
+                        "sass-loader"    //1. Compiles sass to css
                         ]
                 },
                 {
@@ -55,7 +57,9 @@
             ]
         },
         plugins: [
-            new HtmlWebpackPlugin()
+            new HtmlWebpackPlugin({
+                template: './src/template.html'
+            })
         ]
     };
 ```
