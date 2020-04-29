@@ -31,3 +31,13 @@
 ### Note:
 * While adding a loader, not to add any type of quote to the test key , as it will not find the specific file format.
 * **use** keyword in **loader** resolves it from right to left, so as you can see in the styling loader, first it resolves the css-loader , by resolving the css imports and bundle all the css to the javascript file and style-loader then take this css bundled in javascript file and converts it again and adds it to the style tag in head section of html file.
+* While installing jquery and popper.js and adding navbar from **bootstrap**, i faced an issue on clicking hamburger icon , console throws an error: **"Cannot convert object to primitive value error"**. So to solve this issue , just follow the below steps:
+```javascript
+  The problem is in jquery version 3.5.0, so if we change the version from 3.5.0 to 3.4.1, it will start working
+  terminal :
+  1. npm uninstall --save jquery
+  2. npm install --save-dev jquery@~3.4.1
+           OR
+     npm i -D jquery@~3.4.1
+
+```

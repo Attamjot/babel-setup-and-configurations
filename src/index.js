@@ -6,7 +6,7 @@ const renderButton = () => {
   button.addEventListener("click", () => {
     alert("Welcome to Webpack & Babel");
   });
-  document.body.querySelector(".container").appendChild(button);
+  document.body.querySelector(".main").appendChild(button);
 };
 
 renderButton();
