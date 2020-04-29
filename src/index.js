@@ -1,4 +1,4 @@
-import './main.css';
+import './main.scss';
 
 const renderButton = () => {
   const button = document.createElement("button");
@@ -6,7 +6,7 @@ const renderButton = () => {
   button.addEventListener("click", () => {
     alert("button clicked");
   });
-  document.body.appendChild(button);
+  document.body.querySelector(".container").appendChild(button);
 };
 
 renderButton();

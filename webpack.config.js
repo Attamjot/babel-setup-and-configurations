@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: __dirname,
+    devtool: "none",
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -11,8 +12,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: ["style-loader","css-loader"]
+                test: /\.s[ac]ss$/,
+                use: [
+                    "style-loader",  //3. Creates 'style' nodes from JS strings and Injects styles into DOM 
+                    "css-loader",     //2. Translate css into Javascript
+                    "sass-loader"    //1. Compiles sass to css
+                    ]
             },
             {
                 test: /\.js$/,
@@ -27,6 +32,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: './src/template.html'
+        })
     ]
 };

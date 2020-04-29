@@ -13,6 +13,8 @@
 * html-webpack-plugin ( Refer plugins section )  
 * style-loader  ( Style- loader uses the javascript and convert it to css and add it to the head tag in style tag )
 * css-loader ( The css-loader interprets @import and url() like import/require() and will resolve them and convert the css to javscript and add it to the bundle)
+* sass-loader ( Loads a Sass/SCSS file and compiles it to CSS. )
+  * node-sass ( sass-loader depends on this dependency )
 
 ### Plugins:
 * html-webpack-plugin ( html-webpack-plugin plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags.)
@@ -35,7 +37,10 @@
             rules: [
                 {
                     test: /\.css$/,
-                    use: ["style-loader","css-loader"]
+                    use: [
+                        "style-loader",  //3. Injects styles into DOM 
+                        "css-loader"     //2. Turns css to Javascript
+                        ]
                 },
                 {
                     test: /\.js$/,
