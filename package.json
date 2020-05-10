@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "run": "babel-node src/*.js"
+    "run": "babel-node src/*.js",
+    "dev": "webpack"
   },
   "keywords": [
     "babel-setup",
@@ -19,7 +20,10 @@
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
     "@babel/plugin-transform-runtime": "^7.9.6",
-    "@babel/preset-env": "^7.9.5"
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",

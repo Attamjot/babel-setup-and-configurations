@@ -1,35 +1,20 @@
-"use strict";
+import _regeneratorRuntime from "@babel/runtime-corejs2/regenerator";
+import "regenerator-runtime/runtime";
+import _asyncToGenerator from "@babel/runtime-corejs2/helpers/asyncToGenerator";
+import "core-js/modules/es6.regexp.to-string";
+import "core-js/modules/es6.object.to-string";
+import _Reflect$construct from "@babel/runtime-corejs2/core-js/reflect/construct";
+import _inherits from "@babel/runtime-corejs2/helpers/inherits";
+import _possibleConstructorReturn from "@babel/runtime-corejs2/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime-corejs2/helpers/getPrototypeOf";
+import _classCallCheck from "@babel/runtime-corejs2/helpers/classCallCheck";
+import _Promise from "@babel/runtime-corejs2/core-js/promise";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = _Reflect$construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !_Reflect$construct) return false; if (_Reflect$construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(_Reflect$construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
-require("regenerator-runtime/runtime");
-
-var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
-
-require("core-js/modules/es6.regexp.to-string");
-
-require("core-js/modules/es6.date.to-string");
-
-require("core-js/modules/es6.object.to-string");
-
-require("core-js/modules/es6.reflect.construct");
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
-var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
-
-var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
-require("core-js/modules/es6.array.map");
-
-function _createSuper(Derived) { return function () { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
+import nav, { mapping } from './nav';
 var name = "Attamjot Singh";
 
 var printNumbers = function printNumbers(a, b) {
@@ -40,17 +25,32 @@ var printNumbers = function printNumbers(a, b) {
   return n + 1;
 });
 
+var pro = function pro() {
+  return new _Promise(function (resolve, reject) {
+    if (name) {
+      resolve("resolved");
+    } else {
+      reject("reject");
+    }
+  });
+};
+
+pro().then(function (data) {
+  console.log("data", data);
+});
+
 var A = function A() {
-  (0, _classCallCheck2["default"])(this, A);
+  _classCallCheck(this, A);
 };
 
 var B = /*#__PURE__*/function (_A) {
-  (0, _inherits2["default"])(B, _A);
+  _inherits(B, _A);
 
   var _super = _createSuper(B);
 
   function B() {
-    (0, _classCallCheck2["default"])(this, B);
+    _classCallCheck(this, B);
+
     return _super.apply(this, arguments);
   }
 
@@ -62,9 +62,9 @@ function getPost() {
 }
 
 function _getPost() {
-  _getPost = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+  _getPost = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee() {
     var response;
-    return _regenerator["default"].wrap(function _callee$(_context) {
+    return _regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -85,5 +85,9 @@ function _getPost() {
   return _getPost.apply(this, arguments);
 }
 
+getPost().then(function () {
+  console.log("finally done!!!");
+});
 console.log(name);
 console.log(printNumbers(10, 20));
+console.log("nav", nav);

@@ -3,8 +3,10 @@
         [
             "@babel/preset-env",
             {
+               "debug": true,
+               "modules": false,
                "targets": {
-                "browsers": ["last 2 versions", "safari >= 7", "ie >=7"]
+                "browsers": [">1%"] // "not IE < 12"  "last 2 versions", "safari >= 7", "ie >=7"
                },
                "useBuiltIns": "usage",
                "corejs": {
@@ -13,5 +15,12 @@
             }
         ]
     ],
-    "plugins": ["@babel/plugin-transform-runtime"]
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime", {
+              "corejs": { "version": 2 },
+              "helpers": true,
+              "regenerator": true
+            }]
+    ]
 }

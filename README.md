@@ -14,3 +14,5 @@ Note:
     git commit -m 'Remove the now ignored directory node_modules'
     git push origin master
 ```
+
+* npm dist-tags ls (name_of_dependency_ypu_want_to_install)
